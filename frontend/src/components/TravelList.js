@@ -21,7 +21,6 @@ const TravelList = () => {
   const fetchOptions = async () => {
     const { data } = await axios.get('http://localhost:4000/api/travels')
     setTravelList(data)
-    console.log(data)
   }
 
   return (
