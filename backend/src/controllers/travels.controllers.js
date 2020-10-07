@@ -7,6 +7,12 @@ travelsCtrl.getTravels = async (req, res) => {
   res.json(travels)
 }
 
+/**
+ * método para calcular emisiones
+ * @param {enum} medioTransporte - tipo de transporte
+ * @param {number} distance - distancia recorrida en km
+ * @param {boolean} idaVuelta - flag que indica si se suma dos veces
+ */
 const calcular = (medioTransporte, distance, idaVuelta) => {
   let factor = 0
 
@@ -48,6 +54,7 @@ const calcular = (medioTransporte, distance, idaVuelta) => {
 
   return distance*factor
 }
+
 
 travelsCtrl.createTravel = async (req, res) => {
   const {
